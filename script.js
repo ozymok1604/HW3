@@ -8,8 +8,11 @@ function getRandomArray(length, min, max) {
     let number = getRandNumber(min, max);
     arr.push(number);
   }
-  console.log(array);
+  console.log(arr);
 }
+
+//getRandomArray(5, 0, 5);
+
 
 function getModa(...numbers) {
   numbers.sort();
@@ -44,7 +47,9 @@ function getModa(...numbers) {
     }
   }
 }
-getModa();
+
+//getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
+
 
 function getAvarage(...numbers) {
   let sum = 0;
@@ -71,45 +76,33 @@ function getMediana(...numbers) {
     console.log(numbers[len2 + 1]);
   }
 }
-//getMediana(6, 2, 55, 11, 78,50);
+//getMediana(6, 2, 55, 11, 78,50,20);
 
-function getEvenNumbers(...numbers) {
-  for (i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 == 0) {
-      console.log(numbers[i]);
-    }
-  }
+const getEvenNumbers = (...numbers) =>{
+  return numbers.map((number) => {
+   if (number % 2 == 0) {
+     console.log(number);
+  }});
 }
 
-function getNumbers5(...numbers) {
-  for (i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 5 == 0) {
-      console.log(numbers[i]);
-    }
-  }
+//getEvenNumbers(1,2,3,4,5,6,7,8);
+
+
+
+const getNumbers55 = (...numbers) =>{
+   return numbers.map((number) => {
+    if (number % 5 == 0) {
+      console.log(number);
+   }});
 }
+
+
+//getNumbers55(5,25,1,6,7);
+
 const badWords = ["fuck", "shit"];
 let str = "Are you shit fucking kidding shit cool fucks";
 
-function replaceBadWords() {
-  const newStr = [];
-  let formatted = str.split(" ");
-  let formattedLen = formatted.length;
-  for (i = 0; i < badWords.length; i++) {
-    let badWord = badWords[i];
 
-    for (j = 0; j < formattedLen; j++) {
-      if (formatted[j].includes(badWord)) {
-        const newWord = formatted[j].replace(badWord, "*");
-
-        console.log(newWord);
-      }
-    }
-  }
-  console.log(newStr);
-}
-
-replaceBadWords();
 
 const replaceBadWords2 = () => {
   const words = str.split(" ");
@@ -118,7 +111,7 @@ const replaceBadWords2 = () => {
     let temp = word;
     badWords.map((badWord) => {
       if (word.includes(badWord)) {
-        temp = word.replace(badWord, '*'.repeat(badWord.length));
+        temp = word.replace(badWord, "*".repeat(badWord.length));
       }
     });
     return temp;
@@ -127,18 +120,15 @@ const replaceBadWords2 = () => {
 
 //console.log(replaceBadWords2().join(' '));
 
-
-const divideByThree2 = () =>{
-  const word = 'Commander'.split('');
+const divideByThree2 = () => {
+  const word = "Commander".split("");
   console.log(word);
-  
+
   const parts = [];
   const length = word.length;
-  for (i=0;i<length/3;i++){
-    parts.push(word.splice(0,3));
-
+  for (i = 0; i < length / 3; i++) {
+    parts.push(word.splice(0, 3));
   }
-console.log(parts.join('   '))
-
-}
-divideByThree2();
+  console.log(parts.join("   "));
+};
+//divideByThree2();
